@@ -1,0 +1,41 @@
+name: Collect weekly health AI papers
+
+on:
+  schedule:
+    # Run every Friday at 08:00 UTC.
+    - cron: "0 8 * * 5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect-papers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect papers
+        run: python collect_papers.py
+
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add papers_*.md
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Add weekly paper report"
+            git push
+          fi

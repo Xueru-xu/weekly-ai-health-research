@@ -71,4 +71,4 @@ rss_feeds:
 
 report:
   title: "Weekly Health AI Papers"
-  default_days: 7
+  default_days: 30

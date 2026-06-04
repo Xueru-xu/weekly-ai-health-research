@@ -1,0 +1,74 @@
+# Search terms used to keep papers relevant to AI, health, prediction,
+# intervention, population health, and healthcare management.
+keywords:
+  - Disease Prediction
+  - Risk Prediction
+  - Disease Intervention
+  - Health Management
+  - Population Health
+  - Healthcare Management
+  - Artificial Intelligence
+  - Machine Learning
+  - Deep Learning
+  - Large Language Models
+  - Generative AI
+
+# PubMed is best for biomedical and evidence-based medicine journals.
+pubmed:
+  enabled: true
+  email: "your-email@example.com"
+  tool: "weekly-health-ai-papers"
+  max_results: 80
+  journals:
+    - Nature Medicine
+    - New England Journal of Medicine
+    - Lancet
+    - JAMA
+    - BMJ
+    - Cochrane Database of Systematic Reviews
+    - BMJ Evidence-Based Medicine
+    - Annals of Internal Medicine
+
+# arXiv is used for recent AI/computer-science papers.
+arxiv:
+  enabled: true
+  max_results: 100
+  categories:
+    - cs.AI
+    - cs.CL
+    - cs.CV
+    - cs.LG
+    - cs.NE
+    - stat.ML
+
+# RSS feeds provide direct journal/publisher discovery where available.
+# Feed URLs can change over time; update this list if a publisher changes its RSS location.
+rss_feeds:
+  - name: Nature Medicine
+    url: https://www.nature.com/nm.rss
+  - name: Nature Machine Intelligence
+    url: https://www.nature.com/natmachintell.rss
+  - name: Nature Computational Science
+    url: https://www.nature.com/natcomputsci.rss
+  - name: NEJM
+    url: https://www.nejm.org/action/showFeed?type=etoc&feed=rss&jc=nejm
+  - name: The Lancet
+    url: https://www.thelancet.com/rssfeed/lancet_current.xml
+  - name: JAMA
+    url: https://jamanetwork.com/rss/site_3/67.xml
+  - name: BMJ
+    url: https://www.bmj.com/rss/recent.xml
+  - name: BMJ Evidence-Based Medicine
+    url: https://ebm.bmj.com/rss/current.xml
+  - name: Annals of Internal Medicine
+    url: https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim
+  - name: Management Science
+    url: https://pubsonline.informs.org/action/showFeed?type=etoc&feed=rss&jc=mnsc
+  - name: MIS Quarterly
+    url: https://misq.umn.edu/rss/catalog/new/store_id/1/
+  - name: Information Systems Research
+    url: https://pubsonline.informs.org/action/showFeed?type=etoc&feed=rss&jc=isre
+
+report:
+  title: "Weekly Health AI Papers"
+  default_days: 7
